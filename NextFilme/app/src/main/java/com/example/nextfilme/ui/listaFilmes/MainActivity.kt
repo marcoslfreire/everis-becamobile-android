@@ -5,7 +5,7 @@ import android.os.Bundle
 import com.example.nextfilme.R
 import com.example.nextfilme.data.model.Filme
 
-class ListaFilmesActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     private val listFilmes = arrayListOf(
             Filme(
@@ -30,5 +30,11 @@ class ListaFilmesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        populateList()
+    }
+    private fun populateList (){
+        listFilmes.apply {
+            
+        }
     }
 }

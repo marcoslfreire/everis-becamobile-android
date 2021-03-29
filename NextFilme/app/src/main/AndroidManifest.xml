@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NextFilme">
-        <activity android:name=".ui.listaFilmes.ListaFilmesActivity">
+        <activity android:name=".ui.listaFilmes.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

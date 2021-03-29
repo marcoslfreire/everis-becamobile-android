@@ -1,12 +1,43 @@
 package com.example.nextfilme.data.model
-import com.google.gson.annotations.SerializedName
+import android.os.Parcel
 
 import android.os.Parcelable
 
-data class Filme (
+data class Filme(
     val id: Int,
-    val titulo: String,
+    val titulo: String?,
     val imagem: String?,
     val descricao: String?,
     val dataLancamento: String?
-): Parcelable
+): Parcelable {
+    constructor(parcel: Parcel) : this(
+        parcel.readInt(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString()
+    ) {
+    }
+
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeInt(id)
+        parcel.writeString(titulo)
+        parcel.writeString(imagem)
+        parcel.writeString(descricao)
+        parcel.writeString(dataLancamento)
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<Filme> {
+        override fun createFromParcel(parcel: Parcel): Filme {
+            return Filme(parcel)
+        }
+
+        override fun newArray(size: Int): Array<Filme?> {
+            return arrayOfNulls(size)
+        }
+    }
+}
