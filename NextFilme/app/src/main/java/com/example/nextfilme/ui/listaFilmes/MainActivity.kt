@@ -22,6 +22,11 @@ class ListaFilmesActivity : AppCompatActivity() {
         )
 
     )
+
+    private fun Filme(id: Int, titulo: String, descricao: Nothing?, dataLancamento: Nothing?) {
+
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
