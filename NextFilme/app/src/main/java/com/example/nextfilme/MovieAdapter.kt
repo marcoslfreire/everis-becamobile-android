@@ -19,5 +19,9 @@ class MovieAdapter(
             itemView.movie_release_data.text = movie.release
             Glide.with(itemView).load(IMAGE_BASE + movie.poster).into(itemView.movie_poster)
         }
+
     }
+    override fun omCreateViewHolder(parent:)
+
+
 

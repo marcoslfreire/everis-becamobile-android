@@ -27,7 +27,22 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun getMovieData(callback: (List<Movie>) -> Unit){
+        val apiService = MovieApiService.getInstance.create(MovieApiInterface::class.java)
+        apiService.getMovieList().enqueue(object : Callback<MovieRespose> {
 
+            override fun onFailure(call: Call<MovieRespose>, t: Throwable) {
+
+            }
+
+            override fun onResponse(call: Call<MovieRespose>, response: Response<MovieRespose>) {
+                return callback(response.body()!!.movies)
+
+            }
+
+        })
+
+    }
 }
 
 
