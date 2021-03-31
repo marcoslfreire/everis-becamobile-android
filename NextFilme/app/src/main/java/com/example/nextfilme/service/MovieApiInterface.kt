@@ -1,6 +1,5 @@
 package com.example.nextfilme.service
 
-
 import com.example.nextfilme.model.MovieRespose
 import retrofit2.Call
 import retrofit2.http.GET

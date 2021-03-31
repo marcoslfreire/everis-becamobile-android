@@ -9,14 +9,12 @@ import kotlinx.android.parcel.Parcelize
 data class Movie(
     @SerializedName("id")
     val id: String?,
-    @SerializedName("paster_path")
+    @SerializedName("poster_path")
     val poster:String?,
     @SerializedName("title")
     val title: String?,
     @SerializedName("release_data")
     val release: String?
-    ): Parcelable{
+    ): Parcelable
 
 
-    constructor(): this("","","","")
-    }

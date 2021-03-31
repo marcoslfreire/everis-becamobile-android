@@ -19,9 +19,21 @@ class MovieAdapter(
             itemView.movie_release_data.text = movie.release
             Glide.with(itemView).load(IMAGE_BASE + movie.poster).into(itemView.movie_poster)
         }
-
     }
-    override fun omCreateViewHolder(parent:)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
+        return MovieViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.movie_item,parent,false)
+        )
+    }
+    override fun getItemCount(): Int = movies.size
+
+    override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
+        holder.bindMovie(movies[position])
+    }
+
+
+}
+
 
 
 
