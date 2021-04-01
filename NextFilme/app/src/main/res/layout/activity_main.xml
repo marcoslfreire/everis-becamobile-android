@@ -41,6 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:text="Filmes Populares"
+                android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
 
@@ -49,7 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="16dp"
-                android:background="@color/design_default_color_on_secondary" />
+                android:background="#673AB7" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/movies_list"

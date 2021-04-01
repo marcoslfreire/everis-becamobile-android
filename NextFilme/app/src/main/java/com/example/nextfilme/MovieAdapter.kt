@@ -14,7 +14,7 @@ class MovieAdapter(
 
     class MovieViewHolder(view : View) : RecyclerView.ViewHolder(view) {
         private val IMAGE_BASE = "https://image.tmdb.org/t/p/w500/"
-        fun bindMovie(movie: Movie) {
+        fun updateMovie(movie: Movie) {
             itemView.movie_title.text = movie.title
             itemView.movie_release_data.text = movie.release
             Glide.with(itemView).load(IMAGE_BASE + movie.poster).into(itemView.movie_poster)
@@ -28,7 +28,7 @@ class MovieAdapter(
     override fun getItemCount(): Int = movies.size
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
-        holder.bindMovie(movies[position])
+        holder.updateMovie(movies[position])
     }
 
 
